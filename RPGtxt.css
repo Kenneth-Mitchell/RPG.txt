@@ -1,0 +1,64 @@
+body {
+    background-color: #000;
+    padding: 10px;
+    font-family: monospace;
+    color: #00ff00;
+    font-size: 30px;
+}
+
+
+span {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.output {
+    height: auto;
+}
+.characterInfo {
+    height: 1000;
+    width: 1000;
+    background-color: #000;
+    border: 1px solid #00ff00;
+    float: right;
+    margin: 10px;
+    padding: 10px;
+}
+
+.input {
+    white-space: pre;
+    overflow: auto;
+    padding: 10px;
+    background-color: transparent;
+    outline: none;
+}
+
+.prompt {
+    white-space: pre;
+    overflow: auto;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/* Apply styles to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style alternating table rows */
+tr:nth-child(even) {
+    background-color: #001;
+}
+
+/* Style table data cells */
+td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    font-size: 50;
+}
+

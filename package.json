@@ -1,0 +1,12 @@
+{
+  "name": "rpgtxt",
+  "version": "1.0.0",
+  "description": "rpg terminal game",
+  "main": "RPGtxt.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenneth Mitchell",
+  "license": "ISC"
+}
