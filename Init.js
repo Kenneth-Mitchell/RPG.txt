@@ -19,6 +19,7 @@ function displayInitialStory() {
 function promptActions() {
     UIManager.displayMessage('What do you do?');
     UIManager.displayMessage('Here are the actions available to you:')
+    UIManager.displayMessage('(c)arouse');
 }
 
 export { initializeGame };

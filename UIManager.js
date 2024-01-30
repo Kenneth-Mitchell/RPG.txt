@@ -8,9 +8,9 @@ class UIManager {
         // Create the table
         const table = document.createElement('table');
         const tableBody = document.createElement('tbody');
-
+        
         // Create the table rows
-        for (const ability in character.stats) {
+        for (const ability in character.abilities) {
             const row = document.createElement('tr');
 
             // Create the table cells
@@ -19,11 +19,37 @@ class UIManager {
             row.appendChild(statNameCell);
 
             const statScoreCell = document.createElement('td');
-            statScoreCell.textContent = character.stats[ability].score;
+            statScoreCell.textContent = character.abilities[ability].score;
             row.appendChild(statScoreCell);
 
             const statModCell = document.createElement('td');
-            statModCell.textContent = character.stats[ability].modifier;
+            const modifier = character.abilities[ability].modifier;
+            if (modifier >= 0) {
+                statModCell.textContent = "+" + modifier;
+            } else {
+                statModCell.textContent =  modifier;
+            }
+            row.appendChild(statModCell);
+
+            // Add the row to the table body
+            tableBody.appendChild(row);
+        }
+
+        for (const save in character.stats.saves) {
+            const row = document.createElement('tr');
+
+            // Create the table cells
+            const statNameCell = document.createElement('td');
+            statNameCell.textContent = save + " save";
+            row.appendChild(statNameCell);
+
+            const statModCell = document.createElement('td');
+            const modifier = character.stats.saves[save].modifier;
+            if (modifier >= 0) {
+                statModCell.textContent = "+" + modifier;
+            } else {
+                statModCell.textContent =  modifier;
+            }
             row.appendChild(statModCell);
 
             // Add the row to the table body

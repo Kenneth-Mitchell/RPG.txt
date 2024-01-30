@@ -4,40 +4,57 @@ body {
     font-family: monospace;
     color: #00ff00;
     font-size: 30px;
+    margin: 10px;
+    padding: 10px;
 }
-
 
 span {
     color: #00ff00;
     font-weight: bold;
 }
 
-.output {
-    height: auto;
+/* .parent {
+    position: relative;
+} */
+
+.outputWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: auto;
+    height: 1300px;
+    border: 1px solid #00ff00;
+    margin: 10px;
+    padding: 10px;
 }
+
 .characterInfo {
-    height: 1000;
-    width: 1000;
+    height: 1000px;
+    width: 1000px;
     background-color: #000;
     border: 1px solid #00ff00;
     float: right;
     margin: 10px;
     padding: 10px;
+    overflow-y: hidden;
+}
+.dice {
+    color: #00ff00;
+    font-weight: bold;
+    font-size: 50;
+    height: 266px;
+    width: 1000px;
+    border: 1px solid #00ff00;
+    margin: 10px;
+    padding: 10px;
+    clear: right;
+    float: right;
+    margin-top: 0px;
 }
 
-.input {
+.input, .prompt {
     white-space: pre;
     overflow: auto;
     padding: 10px;
-    background-color: transparent;
-    outline: none;
-}
-
-.prompt {
-    white-space: pre;
-    overflow: auto;
-    padding: 10px;
-    border: none;
     background-color: transparent;
     outline: none;
 }
@@ -61,4 +78,5 @@ td {
     border-bottom: 1px solid #ddd;
     font-size: 50;
 }
+
 

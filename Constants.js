@@ -23,29 +23,44 @@ const CLASSES = {
 
 
 const BASE_STATS = {
-    strength: {
-        score: 10,
-        modifier: 0
-    },
-    agility: {
-        score: 10,
-        modifier: 0
-    },
-    stamina: {
-        score: 10,
-        modifier: 0
-    },
-    personality: {
-        score: 10,
-        modifier: 0
-    },
-    intelligence: {
-        score: 10,
-        modifier: 0
-    },
-    luck: {
-        score: 10,
-        modifier: 0
+    abilities: {
+        strength: {
+            score: 10,
+            modifier: 0
+        },
+        agility: {
+            score: 10,
+            modifier: 0
+        },
+        stamina: {
+            score: 10,
+            modifier: 0
+        },
+        personality: {
+            score: 10,
+            modifier: 0
+        },
+        intelligence: {
+            score: 10,
+            modifier: 0
+        },
+        luck: {
+            score: 10,
+            modifier: 0
+        }},
+    saves :{
+        fortitude: {
+            ability: 'stamina',
+            modifier: 0
+        },
+        reflex: {
+            ability: 'agility',
+            modifier: 0
+        },
+        will: {
+            ability: 'personality',
+            modifier: 0
+        }
     }
 };
 

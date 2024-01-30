@@ -7,29 +7,56 @@ function generateRandomName() {
     return `${adjective} ${noun}`;
 }
 
-function rollDice(numberOfDice, sides) {
+function rollDice(numberOfDice, sides, showRolls = true) {
     let total = 0;
     for (let i = 0; i < numberOfDice; i++) {
-        total += Math.floor(Math.random() * sides) + 1;
+        var finalRoll = Math.ceil(Math.random() * sides);
+        total += finalRoll;
+        if (showRolls) {
+            let dice = document.getElementsByClassName('dice')[0];
+            let rollAnimation = setInterval(function() {
+                let number = Math.ceil(Math.random() * sides);
+                dice.textContent = number;
+            }, 50); // Change number every 50 milliseconds
+        
+            setTimeout(function() {
+                clearInterval(rollAnimation); // Stop changing numbers
+                dice.textContent = finalRoll; // Display final result
+            }, 1000);
+        }
     }
     return total;
 }
 
 function rollStats() {
-    const stats = BASE_STATS;
-    for (const ability in BASE_STATS) {
-        stats[ability]["score"] = rollDice(3, 6);
+    var stats = BASE_STATS;
+    for (const ability in stats["abilities"]) {
+        var score = stats["abilities"][ability]["score"];
+        if (isNaN(score)) {
+            continue;
+        }
+        stats["abilities"][ability]["score"] = rollDice(3, 6, false);
     }
     return stats;
 }
 
 function calcMods(stats) {
-    for (const ability in BASE_STATS) {
-        stats[ability]["modifier"] = Math.floor((BASE_STATS[ability]["score"] - 10) / 2);
+    const abilities = stats["abilities"];
+    const saves = stats["saves"];
+    
+    
+    for (const ability in abilities) {
+        const score = abilities[ability]["score"];
+        stats["abilities"][ability]["modifier"] = Math.floor((score - 10) / 2);
+    }
+
+    for (const save in saves) {
+        const ability = saves[save]["ability"];
+        const mod = abilities[ability]["modifier"];
+        stats["saves"][save]["modifier"] = mod;
     }
     return stats
 }
-
 
 function randomProperty(obj) {
     var keys = Object.keys(obj);

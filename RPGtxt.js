@@ -22,6 +22,10 @@ function handleInput(event) {
             if (playerCharacter.check('strength', 10)) {
                 UIManager.displayMessage('You succeed!');
             }
+        } else if (inputValue === 'c') {
+            playerCharacter.carouse();
+        } else {
+            UIManager.displayMessage('You do nothing.');
         }
         inputElement.textContent = ''; // Clear the input field
     }

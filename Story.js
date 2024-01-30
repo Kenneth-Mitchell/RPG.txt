@@ -1,9 +1,9 @@
 class Snippet {
-    constructor(text, index) {
+    constructor(text, name) {
         this.text = text;
-        this.condition = index;
+        this.name = name;
     }
 }
-const STORYI = [ new Snippet("Welcome to Hirot. You are a hero.", 0),]
+const STORYI = [ new Snippet("Welcome to RPG.txt. You are a hero.", "intro"),]
 
 export { STORYI };
