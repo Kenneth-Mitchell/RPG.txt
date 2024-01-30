@@ -18,10 +18,6 @@ class UIManager {
             statNameCell.textContent = ability;
             row.appendChild(statNameCell);
 
-            const statScoreCell = document.createElement('td');
-            statScoreCell.textContent = character.abilities[ability].score;
-            row.appendChild(statScoreCell);
-
             const statModCell = document.createElement('td');
             const modifier = character.abilities[ability].modifier;
             if (modifier >= 0) {
@@ -30,6 +26,14 @@ class UIManager {
                 statModCell.textContent =  modifier;
             }
             row.appendChild(statModCell);
+
+            
+
+            const statScoreCell = document.createElement('td');
+            statScoreCell.textContent = character.abilities[ability].score;
+            row.appendChild(statScoreCell);
+
+            
 
             // Add the row to the table body
             tableBody.appendChild(row);
