@@ -13,15 +13,21 @@ function rollDice(numberOfDice, sides, showRolls = true) {
         var finalRoll = Math.ceil(Math.random() * sides);
         total += finalRoll;
         if (showRolls) {
-            let dice = document.getElementsByClassName('dice')[0];
+            let d20 = document.getElementById("d20");
             let rollAnimation = setInterval(function() {
                 let number = Math.ceil(Math.random() * sides);
-                dice.textContent = number;
-            }, 50); // Change number every 50 milliseconds
+                if (number < 10) { // Add a leading zero if the number is less than 10
+                    number = "0" + number;
+                }
+                d20.textContent = number;
+            }, 75); // Change number every 50 milliseconds
         
             setTimeout(function() {
                 clearInterval(rollAnimation); // Stop changing numbers
-                dice.textContent = finalRoll; // Display final result
+                if (finalRoll < 10) { // Add a leading zero if the number is less than 10
+                    finalRoll = "0" + finalRoll;
+                }
+                d20.textContent = finalRoll; // Display final result
             }, 1000);
         }
     }

@@ -15,12 +15,26 @@ class Character {
         this.friends = [];
     }
     check(ability, DC) {
-        const d20 = rollDice(1, 20);
-        const mod = this.abilities[ability]["modifier"];
-        let dice = document.getElementsByClassName('dice')[0];
+        let mod = this.abilities[ability]["modifier"];
+
+        let checkTotal_html = document.getElementById('checktotal');
+        let modifier_html = document.getElementById('modifier');
+        let checkType_html = document.getElementById('checktype');
+        let DC_html = document.getElementById('DC');
+        let checkResult_html = document.getElementById('checkresult');
+
+        DC_html.textContent = "DC: " + DC;
+        checkType_html.textContent = ability + " check";
+        modifier_html.textContent = mod;
+        checkTotal_html.textContent = "Rolling...";
+        let d20 = rollDice(1, 20);
+        
+        
         setTimeout(function() {
-            dice.textContent += " + " + mod + " = " + (d20 + mod); // Display final result
+            checkTotal_html.textContent = (d20 + mod); // Display final result
+            checkResult_html.textContent = (d20 + mod >= DC) ? "Success!" : "Failure!";
         }, 1000);
+
         return d20 + mod >= DC;
     }
     carouse() {

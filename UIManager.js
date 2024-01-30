@@ -27,8 +27,6 @@ class UIManager {
             }
             row.appendChild(statModCell);
 
-            
-
             const statScoreCell = document.createElement('td');
             statScoreCell.textContent = character.abilities[ability].score;
             row.appendChild(statScoreCell);
