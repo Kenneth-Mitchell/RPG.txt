@@ -20,7 +20,7 @@ function rollDice(numberOfDice, sides, showRolls = true) {
                     number = "0" + number;
                 }
                 d20.textContent = number;
-            }, 75); // Change number every 50 milliseconds
+            }, 75);
         
             setTimeout(function() {
                 clearInterval(rollAnimation); // Stop changing numbers

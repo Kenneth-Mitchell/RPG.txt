@@ -27,18 +27,34 @@ class Character {
         checkType_html.textContent = ability + " check";
         modifier_html.textContent = mod;
         checkTotal_html.textContent = "Rolling...";
+        checkResult_html.textContent = "";
         let d20 = rollDice(1, 20);
         
         
         setTimeout(function() {
             checkTotal_html.textContent = (d20 + mod); // Display final result
-            checkResult_html.textContent = (d20 + mod >= DC) ? "Success!" : "Failure!";
+            if (d20 == 20) {
+                document.getElementById("screen").style.animation = "";
+                document.getElementById("screen").style.animation = "shake 0.25s";
+                checkResult_html.textContent = "Critical Success!";
+                checkResult_html.style.color = "white";
+            }
+            else if (d20 == 1) {
+                document.getElementById("screen").style.animation = "";
+                document.getElementById("screen").style.animation = "shake 0.25s";
+                checkResult_html.textContent = "Critical Failure!";
+                checkResult_html.style.color = "red";
+            }
+            else {
+                checkResult_html.textContent = (d20 + mod >= DC) ? "Success!" : "Failure!";
+                checkResult_html.style.color = "#00ff00"
+            }
         }, 1000);
-
         return d20 + mod >= DC;
     }
     carouse() {
-        if (this.check('personality', 10)){
+        let result = this.check('personality', 10);
+        if (result){
             this.newFriend();
         }
         else {

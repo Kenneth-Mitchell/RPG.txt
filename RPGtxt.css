@@ -8,14 +8,21 @@ body {
     padding: 10px;
 }
 
+@keyframes shake {
+    0% { transform: translate(5px, 0px) rotate(1deg); }
+    15% { transform: translate(0px, 5px) rotate(1deg); }
+    30% { transform: translate(-5px, 0px) rotate(-1deg); }
+    45% { transform: translate(0px, -5px) rotate(-1deg); }
+    60% { transform: translate(5px, 0px) rotate(1deg); }
+    75% { transform: translate(0px, 5px) rotate(1deg); }
+    90% { transform: translate(-5px, 0px) rotate(-1deg); }
+    100% { transform: translate(0px, -5px) rotate(-1deg); }
+}
+
 span {
     color: #00ff00;
     font-weight: bold;
 }
-
-/* .parent {
-    position: relative;
-} */
 
 .outputWrapper {
     display: flex;
