@@ -18,6 +18,8 @@ function handleInput(event) {
         event.preventDefault(); // Prevent line break
         let inputElement = document.querySelector('.input');
         let inputValue = inputElement.textContent.trim(); // Use textContent
+        playerCharacter.day++;
+        UIManager.setDay(playerCharacter.day);
         if (inputValue === 's') {
             if (playerCharacter.check('strength', 10)) {
                 UIManager.displayMessage('You succeed!');

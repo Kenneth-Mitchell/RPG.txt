@@ -89,6 +89,11 @@ class UIManager {
         
         console.log(message);
     }
+
+    static setDay(x) {
+        document.getElementById('progressBar').style.width = x + '%'; 
+    }
+
     
 }
 

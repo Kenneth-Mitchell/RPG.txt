@@ -13,6 +13,7 @@ class Character {
         this.stats = calcMods(this.stats);
         this.inventory = [];
         this.friends = [];
+        this.day = 0;
     }
     check(ability, DC) {
         let mod = this.abilities[ability]["modifier"];
