@@ -92,6 +92,17 @@ class UIManager {
 
     static setDay(x) {
         document.getElementById('progressBar').style.width = x + '%'; 
+        if (x <= 25) {
+            daysLeft = 25 - x;
+        } else if (x <= 50) {
+            daysLeft = 50 - x;
+        } else if (x <= 75) {
+            daysLeft = 75 - x;
+        } else {
+            daysLeft = 100 - x;
+        }
+        document.getElementById('daysLeft').textContent = daysLeft + ' days';
+        document.getElementById('daysLeft')
     }
 
     
