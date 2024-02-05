@@ -32,7 +32,24 @@ span {
     border: 1px solid #00ff00;
     margin: 10px;
     padding: 10px;
+    white-space: pre-wrap;
 }
+
+/* .output {
+    animation: typing 1s steps(40, end) forwards;
+    white-space: pre;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+.output {
+    white-space: pre;
+    overflow: hidden;
+} */
 
 .characterInfo {
     height: 500px;

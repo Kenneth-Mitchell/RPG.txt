@@ -72,22 +72,23 @@ class UIManager {
         characterInfoElement.appendChild(table);
     }
 
-    static displayMessage(message) {
-        // Create a new <p> element for the message
-        const messageElement = document.createElement('p');
-        messageElement.textContent = message;
-        
+    static async displayMessage(message) {
         // Get the output element
         const output = document.querySelector('.output');
-        
-        // Append the new <p> element to the output
+        // Create a new <p> element for the message
+        const messageElement = document.createElement('p');
         output.appendChild(messageElement);
-        
+
+        // Get the message element
+        for (let i = 0; i < message.length; i++) {
+            messageElement.textContent += message[i];
+            await new Promise(resolve => setTimeout(resolve, 10));
+        }
+        // Append the new <p> element to the output
         // Optionally, you can add a line break between messages
         const lineBreak = document.createElement('br');
         output.appendChild(lineBreak);
         
-        console.log(message);
     }
 
     static setDay(x) {

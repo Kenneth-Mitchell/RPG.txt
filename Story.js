@@ -4,6 +4,6 @@ class Snippet {
         this.name = name;
     }
 }
-const STORYI = [ new Snippet("Welcome to RPG.txt. You are a hero.", "intro"),]
+const STORYI = [ new Snippet("Welcome to RPG.txt. \n\nYou are a hero and goblins are attacking.", "intro"),]
 
 export { STORYI };
