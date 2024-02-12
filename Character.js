@@ -14,6 +14,7 @@ class Character {
         this.inventory = [];
         this.friends = [];
         this.day = 0;
+        this.Kenneth = false;
     }
     
     async check(ability, DC) {
@@ -55,20 +56,34 @@ class Character {
                 resolve();
             }, 750);
         });
+        if (d20 == 20) {
+            return "crit";
+        }
 
         return d20 + mod >= DC;
     }
     async carouse() {
         let result = await this.check('personality', 10);
-        if (result){
+        if (result == "crit"){
+            this.newFriend("Kenneth");
+        }
+        else if (result) {
             this.newFriend();
         }
         else {
             UIManager.displayMessage('You try to carouse with the locals, but they ignore you.');
         }
     }
-    newFriend() {
-        const name = generateRandomName();
+    newFriend(name = null) {
+        if (name == "Kenneth") {
+            UIManager.displayMessage('You made a new friend! Their name is Kenneth.');
+            UIManager.displayMessage('You now have ' + this.friends.push("Kenneth") + ' friends.');
+            this.Kenneth = true;
+            UIManager.displayMessage('Kenneth wants to talk to you...');
+            UIManager.displayMessage('(t) to talk to Kenneth.')
+            return;
+        }
+        var name = generateRandomName();
         UIManager.displayMessage('You made a new friend! Their name is ' + name + '.');
         UIManager.displayMessage('You now have ' + this.friends.push(name) + ' friends.');
     }

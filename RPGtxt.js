@@ -25,7 +25,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else if (inputValue === 'c') {
                 playerCharacter.carouse();
-            } else {
+            } else if (inputValue === 't'){
+                UIManager.displayMessage('You talk to Kenneth.');
+                UIManager.displayMessage('"Hey... I think I know you from somewhere..."');
+                UIManager.displayMessage('Would you be my valentine?');
+                UIManager.displayMessage('y/n');
+            } else if (inputValue === 'y'){
+                UIManager.displayMessage('You are now Kenneth\'s valentine.');
+                UIManager.displayMessage('You win the game!');
+                UIManager.displayMessage('          LoveLoveLov                eLoveLoveLo\n'+
+                '      veLoveLoveLoveLove          LoveLoveLoveLoveLo\n'+
+                '   veLoveLoveLoveLoveLoveL      oveLoveLoveLoveLoveLove\n'+
+                '  LoveLoveLoveLoveLoveLoveL    oveLoveLoveLoveLoveLoveLo\n'+
+                ' veLoveLoveLoveLoveLoveLoveL  oveLoveLoveLoveLoveLoveLove\n'+
+                ' LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove\n'+
+                ' LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove\n'+
+                '  LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLo\n'+
+                '  veLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove\n'+
+                '    LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLo\n'+
+                '      veLoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLove\n'+
+                '        LoveLoveLoveLoveLoveLoveLoveLoveLoveLoveLo\n'+
+                '          veLoveLoveLoveLoveLoveLoveLoveLoveLove\n'+
+                '            LoveLoveLoveLoveLoveLoveLoveLoveLo\n'+
+                '              veLoveLoveLoveLoveLoveLoveLove\n'+
+                '                LoveLoveLoveLoveLoveLoveLo\n'+
+                '                   veLoveLoveLoveLoveLo\n'+
+                '                       veLoveLoveLo\n'+
+                '                            ve');
+            
+            }
+            else {
                 UIManager.displayMessage('You do nothing.');
             }
             inputElement.textContent = ''; // Clear the input field
